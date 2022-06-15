@@ -1,3 +1,44 @@
+const viandas = ['proteico', 'keto','gourmet'];
+
+for (let index = 0; index < viandas.length; index++){
+  alert("posicion " + index + " vianda " + viandas[index]);
+}
+
+viandas.unshift('veggie');
+
+console.log(viandas);
+
+class Veggie {
+  constructor (nombre, precio, stock){
+    this.nombre = nombre.toUpperCase();
+    this.precio = precio;
+    this.stock = stock; 
+  }
+}
+
+const comidas = [
+  {nombre: "tarta", precio: 300,  stock:10},
+  {nombre: "falafel", precio: 200,  stock:8}
+]
+//asi seria para incoporar cada uno? o es con push o pusg (new veggie)??
+
+console.log(comidas);
+
+comidas.push({nombre: "curry", precio: 250,  stock:11});
+
+console.table(comidas);
+
+
+
+
+
+
+
+
+
+
+
+/*
 //conocer el valor total del producto segun el interes por cuotas
 
 let precioProducto = +(prompt("ingrese el precio del producto a comprar"));
@@ -32,3 +73,4 @@ function continuar (){
     alert ("puede cerrar esta ventana");
   }
   }
+*/
