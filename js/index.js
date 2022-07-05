@@ -1,23 +1,106 @@
-let formulario = document.getElementById("formulario");
-formulario.addEventListener('submit', formularioEnviado);
+let contenedor = document.getElementById("container");
+let contenedorSelect = document.getElementById("containerSelec");
+let seleccionados = [];
 
-function formularioEnviado(e){
-  e.preventDefault();
-  alert ("El formulario ha sido enviado correctamente");
+// Funciones en orden de ejecucion
+cargarSeleccionados();
+mostrarViandas();
+mostrarSeleccionados();
+
+
+function cargarSeleccionados (){
+if (localStorage.getItem("StorageSeleccionados" !== null)){
+   seleccionados = JSON.parse(localStorage.getItem("StorageSeleccionados"));
+   return;
+} else {
+  localStorage.setItem("StorageSeleccionados", JSON.stringify(seleccionados));
+  return;
+}
+}
+
+function mostrarViandas(){
+  viandas.forEach((viandas) => {
+    contenedor.innerHTML +=`
+    <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+  <div class="card-header"> ${viandas.id} ${viandas.vianda} </div>
+  <div class="card-body">
+    <h5 class="card-title">${viandas.precio}</h5>
+    <p class="card-text">texto</p>
+    <button onClick="viandaSeleccionada(${viandas.id})" class="btn btn-outline-success">Quiero!</button>
+  </div>
+</div>`
+  });
+}
+
+function mostrarSeleccionados(){
+  seleccionados.forEach((seleccionados) => {
+    contenedorSelect.innerHTML +=`
+    <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+  <div class="card-header"> ${seleccionados.id} ${seleccionados.vianda} </div>
+  <div class="card-body">
+    <h5 class="card-title">${seleccionados.precio}</h5>
+    <p class="card-text">texto</p>
+    <button onClick=" quitarSeleccionados (${seleccionados.id})" class="btn btn-outline-success">No quiero!</button>
+  </div>
+</div>`
+ }
+ );
+}
+
+function viandaSeleccionada(id){
+  let indice = id-1;
+  let viandaSeleccionada = {};
+  viandaSeleccionada = viandas [indice];
+
+  if (!seleccionados.some(e=>e.id==id)){
+    seleccionados.push(viandaSeleccionada);
+    localStorage.setItem("StorageSeleccionados", JSON.stringify(seleccionados));
+    location.reload();
+  } else {
+    alert ("ya agregaste esta vianda")
+  }
+  
+}
+
+function quitarSeleccionados(id) {
+  let seleccionadosFiltrado = seleccionados.filter(e=> e.id != id);
+  seleccionados = seleccionadosFiltrado;
+  localStorage.setItem("StorageSeleccionados", JSON.stringify(seleccionados));
+  console.log(seleccionadosFiltrado);
+  location.reload();
 }
 
 
-let campo1 = document.getElementById("nombre");
-campo1.onclick = () => {console.log ('hicieron click en el campo nombre')};
-
-let campo2 = document.getElementById("apellido");
-campo2.onkeydown = () => {console.log('tecla apretada en campo apellido')};
 
 
-let form = document.getElementById("fielset");
-let newInput = document.createElement("reset");
-newInput.innerHTML = `<input type="reset" value="Borrar">`;
-form.append(newInput);
+
+
+
+
+
+
+
+
+// let formulario = document.getElementById("formulario");
+// formulario.addEventListener('submit', formularioEnviado);
+
+// function formularioEnviado(e){
+//   e.preventDefault();
+//   alert ("El formulario ha sido enviado correctamente");
+// }
+
+
+// let campo1 = document.getElementById("nombre");
+// campo1.onclick = () => {console.log ('hicieron click en el campo nombre')};
+
+// let campo2 = document.getElementById("apellido");
+// campo2.onkeydown = () => {console.log('tecla apretada en campo apellido')};
+
+
+// let form = document.getElementById("fielset");
+// let newInput = document.createElement("reset");
+// newInput.innerHTML = `<input type="reset" value="Borrar">`;
+// form.append(newInput);
 
 
 
