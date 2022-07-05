@@ -1,24 +1,19 @@
 let contenedor = document.getElementById("container");
 let contenedorSelect = document.getElementById("containerSelec");
-let seleccionados = [];
+let seleccionados = []; 
 
-// Funciones en orden de ejecucion
 cargarSeleccionados();
 mostrarViandas();
 mostrarSeleccionados();
+filtroViandas();
 
 
-function cargarSeleccionados (){
-if (localStorage.getItem("StorageSeleccionados" !== null)){
-   seleccionados = JSON.parse(localStorage.getItem("StorageSeleccionados"));
-   return;
-} else {
-  localStorage.setItem("StorageSeleccionados", JSON.stringify(seleccionados));
-  return;
-}
-}
+function cargarSeleccionados() {
+  localStorage.getItem("StorageSeleccionados") !== null ? seleccionados = JSON.parse(localStorage.getItem("StorageSeleccionados")) : localStorage.setItem("StorageSeleccionados", JSON.stringify(seleccionados))
+  }
 
-function mostrarViandas(){
+
+function mostrarViandas() {
   viandas.forEach((viandas) => {
     contenedor.innerHTML +=`
     <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
@@ -32,46 +27,70 @@ function mostrarViandas(){
   });
 }
 
-function mostrarSeleccionados(){
-  seleccionados.forEach((seleccionados) => {
-    contenedorSelect.innerHTML +=`
-    <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-  <div class="card-header"> ${seleccionados.id} ${seleccionados.vianda} </div>
-  <div class="card-body">
-    <h5 class="card-title">${seleccionados.precio}</h5>
-    <p class="card-text">texto</p>
-    <button onClick=" quitarSeleccionados (${seleccionados.id})" class="btn btn-outline-success">No quiero!</button>
-  </div>
-</div>`
- }
- );
+
+function filtroViandas() {
+  const entrada = document.querySelector(".buscarViandas");
+  entrada.addEventListener("keyup", (e) => {
+    console.log(e);
+
+    let entradaMinuscula = e.target.value.toLowerCase(); 
+    console.log(entradaMinuscula);
+    if (e.target.matches(".buscarViandas")) {
+      document.querySelectorAll(".card").forEach(
+        (el) =>
+          el.textContent.toLowerCase().includes(entradaMinuscula)? el.classList.remove("filtrar"): el.classList.add("filtrar")
+      );
+    }
+  });
 }
 
-function viandaSeleccionada(id){
-  let indice = id-1;
-  let viandaSeleccionada = {};
-  viandaSeleccionada = viandas [indice];
 
-  if (!seleccionados.some(e=>e.id==id)){
-    seleccionados.push(viandaSeleccionada);
-    localStorage.setItem("StorageSeleccionados", JSON.stringify(seleccionados));
-    location.reload();
-  } else {
-    alert ("ya agregaste esta vianda")
-  }
+function mostrarSeleccionados () {
+  seleccionados.forEach((seleccionados) => {
+    contenedorSelect.innerHTML +=`
+<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+<div class="card-header"> ${seleccionados.id} ${seleccionados.vianda} </div>
+<div class="card-body">
+<h5 class="card-title">${seleccionados.precio}</h5>
+<p class="card-text">texto</p>
+<button id="btn2" onClick=" quitarSeleccionados (${seleccionados.id});" class="btn btn-outline-success">No quiero!</button>
+</div>
+</div>`
+}
+);
+}
+// let boton = getElementById("btn2")
+// boton.onclick = ()=>{
+//   Toastify({
+//     text: "Eliminado correctamente",
+//     duration: 3000,
+//     gravity: 'bottom',
+//     position: 'left',})
+//     .showToast();
+//   }
   
+function viandaSeleccionada (identificador) {
+  let indice = identificador - 1;
+  let viandaElegida = {};
+  viandaElegida = viandas[indice];
+  !seleccionados.some(e=>e.id===identificador)? seleccionados.push(viandaElegida) & localStorage.setItem("StorageSeleccionados", JSON.stringify(seleccionados)) & location.reload() : swal({title: "Upsss", text: "Vianda ya cargada!", icon: "error", button: "Ok",
+  });;
 }
 
 function quitarSeleccionados(id) {
-  let seleccionadosFiltrado = seleccionados.filter(e=> e.id != id);
+  let seleccionadosFiltrado = seleccionados.filter((elemento) => elemento.id != id);
   seleccionados = seleccionadosFiltrado;
   localStorage.setItem("StorageSeleccionados", JSON.stringify(seleccionados));
-  console.log(seleccionadosFiltrado);
-  location.reload();
+  Toastify({
+    text: "Eliminado correctamente",
+    duration: 3000,
+    gravity: 'bottom',
+    position: 'left',})
+    .showToast();
+  location.reload()
 }
-
-
-
+  
+ 
 
 
 
