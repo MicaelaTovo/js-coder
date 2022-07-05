@@ -2,6 +2,17 @@ let contenedor = document.getElementById("container");
 let contenedorSelect = document.getElementById("containerSelec");
 let seleccionados = []; 
 
+
+// let boton = getElementById("btn2")
+// boton.onclick = ()=>{
+//   Toastify({
+//     text: "Eliminado correctamente",
+//     duration: 3000,
+//     gravity: 'bottom',
+//     position: 'left',})
+//     .showToast();
+//   }
+
 cargarSeleccionados();
 mostrarViandas();
 mostrarSeleccionados();
@@ -59,15 +70,7 @@ function mostrarSeleccionados () {
 }
 );
 }
-// let boton = getElementById("btn2")
-// boton.onclick = ()=>{
-//   Toastify({
-//     text: "Eliminado correctamente",
-//     duration: 3000,
-//     gravity: 'bottom',
-//     position: 'left',})
-//     .showToast();
-//   }
+
   
 function viandaSeleccionada (identificador) {
   let indice = identificador - 1;
@@ -88,6 +91,7 @@ function quitarSeleccionados(id) {
     position: 'left',})
     .showToast();
   location.reload()
+
 }
   
  
