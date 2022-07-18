@@ -1,0 +1,42 @@
+ {
+  "id": 1,
+  "vianda": "veggie1",
+  "precio": "McGrane"
+ },  
+ {
+  "id": 2,
+  "vianda": "veggie2",
+  "precio": "Desport"
+}, {
+  "id": 3,
+  "vianda": "veggie3",
+  "precio": "McAne"
+}, {
+  "id": 4,
+  "vianda": "proteica1",
+  "precio": "Cooch"
+}, {
+  "id": 5,
+  "vianda": "proteica2",
+  "precio": "Dunford"
+}, {
+  "id": 6,
+  "vianda": "keto1",
+  "precio": "Brugsma"
+}, {
+  "id": 7,
+  "vianda": "keto2",
+  "precio": "Headings"
+}, {
+  "id": 8,
+  "vianda": "gourmet1",
+  "precio": "Brisbane"
+}, {
+  "id": 9,
+  "vianda": "gourmet2",
+  "precio": "Woolfenden"
+}, {
+  "id": 10,
+  "vianda": "gourmet3",
+  "precio": "Benedick"
+}

@@ -3,15 +3,6 @@ let contenedorSelect = document.getElementById("containerSelec");
 let seleccionados = []; 
 
 
-// let boton = getElementById("btn2")
-// boton.onclick = ()=>{
-//   Toastify({
-//     text: "Eliminado correctamente",
-//     duration: 3000,
-//     gravity: 'bottom',
-//     position: 'left',})
-//     .showToast();
-//   }
 
 cargarSeleccionados();
 mostrarViandas();
@@ -24,6 +15,26 @@ function cargarSeleccionados() {
   }
 
 
+function mostrarViandas(){
+  fetch('./js/viandas.json')
+  .then ((resp) => resp.json())
+  .then ((viandas) => {
+    viandas.forEach((viandas)=>{
+      contenedor.innerHTML +=`
+    <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+  <div class="card-header"> ${viandas.id} ${viandas.vianda} </div>
+  <div class="card-body">
+    <h5 class="card-title">${viandas.precio}</h5>
+    <p class="card-text">texto</p>
+    <button onClick="viandaSeleccionada(${viandas.id})" class="btn btn-outline-success">Quiero!</button>
+  </div>
+</div>`
+    })
+  })
+}
+
+
+/*
 function mostrarViandas() {
   viandas.forEach((viandas) => {
     contenedor.innerHTML +=`
@@ -37,7 +48,7 @@ function mostrarViandas() {
 </div>`
   });
 }
-
+*/
 
 function filtroViandas() {
   const entrada = document.querySelector(".buscarViandas");
@@ -76,7 +87,7 @@ function viandaSeleccionada (identificador) {
   let indice = identificador - 1;
   let viandaElegida = {};
   viandaElegida = viandas[indice];
-  !seleccionados.some(e=>e.id===identificador)? seleccionados.push(viandaElegida) & localStorage.setItem("StorageSeleccionados", JSON.stringify(seleccionados)) & location.reload() : swal({title: "Upsss", text: "Vianda ya cargada!", icon: "error", button: "Ok",
+  !seleccionados.some(e=>e.id===identificador)? seleccionados.push(viandaElegida)  & localStorage.setItem("StorageSeleccionados", JSON.stringify(seleccionados)) & location.reload() : swal({title: "Upsss", text: "Vianda ya cargada!", icon: "error", button: "Ok",
   });;
 }
 
