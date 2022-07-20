@@ -3,25 +3,25 @@
     "precio": 500,
     "id": 1,
     "title": "Albondigas de pollo con vegetales",
-    "img": "../imagenes/albondigas-pollo-veg-ok.jpg"
+    "img": "./imagenes/albondigas-pollo-veg-ok.jpg"
   },
   {
     "precio": 600,
     "id": 2,
     "title": "Risotto con champignones",
-    "img": "../imagenes/arroz-goulash-ok.jpg"
+    "img": "./imagenes/arroz-goulash-ok.jpg"
   },
   {
     "precio": 400,
     "id": 3,
     "title": "Curry de garbanzos con arroz",
-    "img": "../imagenes/curry-garbanzos-arroz.jpg"
+    "img": "./imagenes/curry-garbanzos-arroz.jpg"
   },
   {
     "precio": 700,
     "id": 4,
     "title": "Lasagna de carne",
-    "img": "../imagenes/lasagna-ok.jpg"
+    "img": "./imagenes/lasagna-ok.jpg"
   },
   {
     "precio": 720,

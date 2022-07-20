@@ -41,7 +41,7 @@ const mostrarViandas = data => {
 
 const agregarCarrito = e => {
     if (e.target.classList.contains('btn-dark')) {
-        setCarrito(e.target.parentElement) & swal({title: "Genial", text: "Tu vianda fue agregada al carrito!", icon: "success", button: "Ok",
+        setCarrito(e.target.parentElement) & swal({title: "Genial", text: "Tu vianda fue agregada al carrito!", icon: "success", button: "Ok"
       })
     }
     e.stopPropagation()
@@ -79,7 +79,7 @@ const mostrarCarrito = () => {
     items.appendChild(fragment)
 
     mostrarFooter()
-    
+
     localStorage.setItem('carrito', JSON.stringify(carrito))
 
 }
@@ -87,7 +87,6 @@ const mostrarCarrito = () => {
 
 const mostrarFooter = () => {
     footer.innerHTML = ''
-    
     if (Object.keys(carrito).length === 0) {
         footer.innerHTML = `
         <th scope="row" colspan="5">Su carrito se encuentra vacío </th>
@@ -109,8 +108,7 @@ const mostrarFooter = () => {
     const boton = document.querySelector('#vaciar-carrito')
     boton.addEventListener('click', () => {
         carrito = {}
-        swal({title: "Upsss", text: "Acabas de vaciar tu carrito!", icon: "error", button: "Ok",
-      })
+        swal({title: "Upsss", text: "Acabas de vaciar tu carrito!", icon: "error", button: "Ok"})
         mostrarCarrito()
     })
 }
@@ -134,7 +132,7 @@ const btnAumentarDisminuir = e => {
               text: "Eliminado correctamente",
               duration: 3000,
               gravity: 'bottom',
-              position: 'left',})
+              position: 'left'})
               .showToast();
         }
         mostrarCarrito()
