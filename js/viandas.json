@@ -1,42 +1,75 @@
- {
-  "id": 1,
-  "vianda": "veggie1",
-  "precio": "McGrane"
- },  
- {
-  "id": 2,
-  "vianda": "veggie2",
-  "precio": "Desport"
-}, {
-  "id": 3,
-  "vianda": "veggie3",
-  "precio": "McAne"
-}, {
-  "id": 4,
-  "vianda": "proteica1",
-  "precio": "Cooch"
-}, {
-  "id": 5,
-  "vianda": "proteica2",
-  "precio": "Dunford"
-}, {
-  "id": 6,
-  "vianda": "keto1",
-  "precio": "Brugsma"
-}, {
-  "id": 7,
-  "vianda": "keto2",
-  "precio": "Headings"
-}, {
-  "id": 8,
-  "vianda": "gourmet1",
-  "precio": "Brisbane"
-}, {
-  "id": 9,
-  "vianda": "gourmet2",
-  "precio": "Woolfenden"
-}, {
-  "id": 10,
-  "vianda": "gourmet3",
-  "precio": "Benedick"
-}
+[
+  {
+    "precio": 500,
+    "id": 1,
+    "title": "Albondigas de pollo con vegetales",
+    "img": "../imagenes/albondigas-pollo-veg-ok.jpg"
+  },
+  {
+    "precio": 600,
+    "id": 2,
+    "title": "Risotto con champignones",
+    "img": "../imagenes/arroz-goulash-ok.jpg"
+  },
+  {
+    "precio": 400,
+    "id": 3,
+    "title": "Curry de garbanzos con arroz",
+    "img": "../imagenes/curry-garbanzos-arroz.jpg"
+  },
+  {
+    "precio": 700,
+    "id": 4,
+    "title": "Lasagna de carne",
+    "img": "../imagenes/lasagna-ok.jpg"
+  },
+  {
+    "precio": 720,
+    "id": 5,
+    "title": "Pescado con espinaca a la crema",
+    "img": "../imagenes/pescado-espinaca-ok.jpg"
+  },
+  {
+    "precio": 480,
+    "id": 6,
+    "title": "Pizza integral con cebolla, individual",
+    "img": "../imagenes/pizza-integral-cebolla-ok.jpg"
+  },
+  {
+      "precio": 600,
+      "id": 7,
+      "title": "Pollo con verduras",
+      "img": "../imagenes/pollo-gril-vegetales-ok.jpg"
+    },
+    {
+      "precio": 450,
+      "id": 8,
+      "title": "Tarta integral de vegetales",
+      "img": "../imagenes/tarta-integral-vegetales-ok.jpg"
+    },
+    {
+      "precio": 480,
+      "id": 9,
+      "title": "Fideos con bolognesa",
+      "img": "../imagenes/fideos-bolognesa-ok.jpg"
+    },
+    {
+      "precio": 500,
+      "id": 10,
+      "title": "Falafels con arroz y vegetales",
+      "img": "../imagenes/falafel-arroz-vegetales-ok.jpg"
+    },
+    {
+      "precio": 800,
+      "id": 11,
+      "title": "Carne con verduras",
+      "img": "../imagenes/carne-veg-ok.jpg"
+    },
+    {
+      "precio": 650,
+      "id": 12,
+      "title": "wok de pollo teriyaki",
+      "img": "../imagenes/pollo-teriyaki-wok-ok.jpg"
+    }
+  
+]
