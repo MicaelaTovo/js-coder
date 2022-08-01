@@ -3,13 +3,13 @@
     "precio": 500,
     "id": 1,
     "title": "Albondigas de pollo con vegetales",
-    "img": "../imagenes/albondigas-pollo-veg-ok.jpg"
+    "img": "https://github.com/MicaelaTovo/js-coder/blob/main/Imagenes/albondigas-pollo-veg-ok.jpg"
   },
   {
     "precio": 600,
     "id": 2,
     "title": "Risotto con champignones",
-    "img": "../imagenes/arroz-goulash-ok.jpg"
+    "img": "https://github.com/MicaelaTovo/js-coder/blob/main/Imagenes/arroz-goulash-ok.jpg"
   },
   {
     "precio": 400,
